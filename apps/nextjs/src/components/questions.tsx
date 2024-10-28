@@ -9,19 +9,18 @@ export function Questions() {
   return (
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
-        <AccordionTrigger>About Saasfly</AccordionTrigger>
+        <AccordionTrigger>Sobre a BitBee</AccordionTrigger>
         <AccordionContent>
-          Nextify Limited’s team of experienced developers has invested years
-          into refining our software development methodologies. We’re proud to
-          present our starter kit, a culmination of best practices and proven
-          tools extracted from countless successful projects. This extensively
-          tested kit is more than just code, it’s a cornerstone of our daily
-          operations, consistently helping us deliver exceptional results for
-          our clients. While informed by our unique experiences, the kit’s
-          solutions are meticulously chosen to address common challenges and fit
-          a wide range of scenarios. We believe it offers a streamlined and
-          efficient framework for building SaaS products, empowering you to
-          achieve your project goals.
+          Nós somos a BitBee, uma fábrica de software brasileira dedicada a
+          transformar suas ideias em soluções digitais de alto desempenho.
+          Utilizando as melhores tecnologias de ponta, criamos produtos sob
+          medida que atendam às necessidades específicas de cada cliente,
+          independentemente do setor ou desafio.
+          Nosso time de profissionais e desenvolvedores combinam expertise
+          técnica com uma abordagem inovadora e orientada a resultados.
+          Desde o planejamento até a entrega, trabalhamos lado a lado com
+          nossos clientes para garantir que cada projeto seja eficiente,
+          escalável e pronto para superar expectativas.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">

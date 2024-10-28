@@ -3,40 +3,54 @@ import Marquee from "@saasfly/ui/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    name: "React",
+    body: "Biblioteca JavaScript para criar interfaces de usuário.",
+    img: "https://www.shareicon.net/download/2016/07/10/119874_apps_512x512.png",
   },
   {
-    name: "Alex",
-    username: "@alex",
-    body: "This tool has revolutionized the way our team works.",
-    img: "https://avatar.vercel.sh/jill",
+    name: "React Native",
+    body: " Framework para construir aplicativos móveis com React.",
+    img: "https://miro.medium.com/v2/resize:fit:1024/1*xDi2csEAWxu95IEkaNdFUQ.png",
   },
   {
-    name: "Shamoki",
-    username: "@shamoki",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    name: "Ruby on Rails",
+    body: "Framework web em Ruby para desenvolvimento ágil.",
+    img: "https://www.svgrepo.com/show/376345/rails.svg",
   },
   {
-    name: "王伟",
-    username: "@wangwei",
-    body: "这款 SaaS 服务简直是办公利器！我的工作效率提高了很多。",
-    img: "https://avatar.vercel.sh/jane",
+    name: "Next",
+    body: "Framework React para renderização do lado do servidor.",
+    img: "https://static-00.iconduck.com/assets.00/nextjs-icon-1024x1024-5et230l7.png",
   },
   {
-    name: "김민수",
-    username: "@kios",
-    body: "저는 이 SaaS 서비스에 매우 만족하고 있습니다.",
-    img: "https://avatar.vercel.sh/jenny",
+    name: "Node",
+    body: "Ambiente JavaScript para executar código no servidor.",
+    img: "https://cdn-icons-png.flaticon.com/512/919/919825.png",
   },
   {
-    name: "山田太郎",
-    username: "@samtimkun",
-    body: "このSaaSサービスには本当に感謝しています。",
-    img: "https://avatar.vercel.sh/james",
+    name: "Typescript",
+    body: "JavaScript com tipagem estática para maior segurança.",
+    img: "https://cdn-icons-png.freepik.com/512/919/919832.png",
+  },
+  {
+    name: "PostgreSQL",
+    body: "Banco de dados relacional robusto e open-source.",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREJjG0Rd9ia0jsGl6DMe1DqenQCiCuI0t61Q&s",
+  },
+  {
+    name: "AWS",
+    body: "Plataforma de computação em nuvem da Amazon.",
+    img: "https://cdn.icon-icons.com/icons2/2407/PNG/512/aws_icon_146074.png",
+  },
+  {
+    name: "Digital Ocean",
+    body: "Provedor de infraestrutura em nuvem fácil de usar.",
+    img: "https://static-00.iconduck.com/assets.00/digitalocean-icon-2048x2048-3xbgy582.png",
+  },
+  {
+    name: "Figma",
+    body: "Ferramenta de design colaborativo baseada na web.  ",
+    img: "https://static-00.iconduck.com/assets.00/figma-icon-2048x2048-lvgft610.png",
   },
 ];
 
@@ -46,12 +60,10 @@ const secondRow = reviews.slice(reviews.length / 2);
 const ReviewCard = ({
   img,
   name,
-  username,
   body,
 }: {
   img: string;
   name: string;
-  username: string;
   body: string;
 }) => {
   return (
@@ -70,7 +82,6 @@ const ReviewCard = ({
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
         </div>
       </div>
       <blockquote className="mt-2 text-sm">{body}</blockquote>
@@ -82,13 +93,13 @@ const Comments = () => {
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-4 sm:py-20 md:py-20 xl:py-20">
       <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+        {firstRow.map((review, idx) => (
+          <ReviewCard key={idx} {...review} />
         ))}
       </Marquee>
       <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+        {secondRow.map((review, idx) => (
+          <ReviewCard key={idx} {...review} />
         ))}
       </Marquee>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>

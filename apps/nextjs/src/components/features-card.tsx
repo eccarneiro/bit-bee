@@ -14,38 +14,38 @@ interface Item {
 let notifications = [
   {
     name: "BeeSpot",
-    description: "Transformando o Wi-Fi em uma ferramenta de marketing.",
+    description: "Wi-Fi como uma ferramenta de marketing.",
     time: "15m ago",
 
-    icon: "💸",
+    icon: "🛜",
     color: "#00C9A7",
   },
   {
     name: "Magazine",
     description: "A	Modernização	da Publicação Digital.",
     time: "10m ago",
-    icon: "👤",
+    icon: "🧾📑",
     color: "#FFB800",
   },
   {
     name: "E-AGC",
-    description: "Audiências online para advogados em assembleias virtuais.",
+    description: "Assembleias virtuais.",
     time: "5m ago",
-    icon: "💬",
+    icon: "💻💬",
     color: "#FF3D71",
   },
   {
     name: "Semear",
-    description: "Deploy your app with ease.",
+    description: "Semeando oportunidades.",
     time: "2m ago",
-    icon: "🗞️",
+    icon: "🔄",
     color: "#1E86FF",
   },
   {
     name: "Cubii",
     description: "Admnistrador de serviços de condomínio.",
     time: "2m ago",
-    icon: "🗞️",
+    icon: "🧊",
     color: "#1E86FF",
   },
 ];

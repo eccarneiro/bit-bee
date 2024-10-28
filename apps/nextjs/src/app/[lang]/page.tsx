@@ -4,7 +4,6 @@ import * as Icons from "@saasfly/ui/icons";
 
 import { XBlogArticle } from "~/components/blog-card";
 import { Comments } from "~/components/comments";
-import { DocumentGuide } from "~/components/document-guide";
 import { FeaturesCard } from "~/components/features-card";
 import { Meteorss } from "~/components/meteors-card";
 import { Questions } from "~/components/questions";
@@ -76,7 +75,7 @@ export default async function IndexPage({
           </div>
 
           <div className="hidden h-full w-full xl:block">
-            <div className="flex flex-col pt-28">
+            <div className="flex flex-col pt-38">
               <Meteorss meteor={meteors_data} />
               <div className="mt-4 flex w-full justify-between">
                 <XBlogArticle />
@@ -94,7 +93,7 @@ export default async function IndexPage({
           <div className="flex w-[60%] flex-col pr-4 pt-40">
             <WobbleCardShow />
           </div>
-          <div className="h-full w-[40%]">
+          <div className="h-full w-[40%] pt-8">
             <div className="flex flex-col pl-[120px]">
               <WordReveal />
             </div>
@@ -117,16 +116,15 @@ export default async function IndexPage({
       </section>
 
       <section className="w-full px-8 pt-10 sm:px-0 sm:pt-0 md:px-0 md:pt-0 xl:px-0 xl:pt-0">
-        <div className="flex h-full w-full flex-col items-center pb-[100px] pt-10">
+        <div className="flex h-full w-full flex-col items-center pb-[100px] pt-11">
           <div>
             <h1 className="mb-6 text-center text-3xl font-bold dark:text-zinc-100 md:text-5xl">
-              What People Are Saying
+              Tecnologias que utilizamos
             </h1>
           </div>
           <div className="mb-6 text-xl dark:text-zinc-100 md:text-xl">
-            Don’t just take our word for it. Here’s what{" "}
-            <span className="font-bold">real people</span> are saying about
-            Saasfly.
+            Trabalhamos com tecnologias {" "}
+            <span className="font-bold">mais atuais</span> do mercado.
           </div>
 
           <div className="w-full overflow-x-hidden">
