@@ -13,8 +13,9 @@ export const AnimatedList = React.memo(
     children: React.ReactNode;
     delay?: number;
   }) => {
-    const [index, setIndex] = useState(0);
-    const childrenArray = React.Children.toArray(children);
+    const childrenArrayBase = React.Children.toArray(children);
+    const childrenArray = [...childrenArrayBase, ...childrenArrayBase]
+    const [index, setIndex] = useState(childrenArrayBase.length - 1);
 
     useEffect(() => {
       const interval = setInterval(() => {
@@ -25,20 +26,20 @@ export const AnimatedList = React.memo(
     }, [childrenArray.length, delay]);
 
     const itemsToShow = useMemo(
-      () => childrenArray.slice(0, index + 1).reverse(),
+      () => childrenArray.slice(0, index + 1).map((item, index) => [item, index]).reverse(),
       [index, childrenArray],
     );
 
     return (
       <div className={`flex flex-col items-center gap-4 ${className}`}>
         <AnimatePresence>
-          {itemsToShow.map((item) => (
-            <AnimatedListItem key={(item as ReactElement).key}>
+          {itemsToShow.map(([item, index]) => (
+            <AnimatedListItem key={index?.toString()}>
               {item}
             </AnimatedListItem>
           ))}
         </AnimatePresence>
-      </div>
+      </div >
     );
   },
 );

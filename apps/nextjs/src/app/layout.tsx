@@ -84,7 +84,7 @@ export default function RootLayout({
       {/*</Suspense>*/}
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-withe font-sans antialiased",
           fontSans.variable,
           fontHeading.variable,
         )}

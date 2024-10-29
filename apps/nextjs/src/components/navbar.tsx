@@ -9,7 +9,6 @@ import { MainNav } from "./main-nav";
 type Dictionary = Record<string, string>;
 
 interface NavBarProps {
-  user: Pick<User, "name" | "image" | "email"> | undefined;
   items?: MainNavItem[];
   children?: React.ReactNode;
   rightElements?: React.ReactNode;

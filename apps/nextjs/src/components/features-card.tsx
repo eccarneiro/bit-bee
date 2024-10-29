@@ -1,86 +1,77 @@
 "use client";
 
+import { useEffect, useState } from "react"; // Importando useState e useEffect
 import { cn } from "@saasfly/ui";
 import { AnimatedList } from "@saasfly/ui/animated-list";
+import { Meteors } from "@saasfly/ui/meteors"; // Importando a animação de meteoros
 
 interface Item {
   name: string;
   description: string;
   icon: string;
   color: string;
-  time: string;
 }
 
 let notifications = [
   {
     name: "BeeSpot",
     description: "Wi-Fi como uma ferramenta de marketing.",
-    time: "15m ago",
-
     icon: "🛜",
     color: "#00C9A7",
   },
   {
     name: "Magazine",
-    description: "A	Modernização	da Publicação Digital.",
-    time: "10m ago",
-    icon: "🧾📑",
+    description: "A Modernização da Publicação Digital.",
+    icon: "🧾",
     color: "#FFB800",
   },
   {
     name: "E-AGC",
     description: "Assembleias virtuais.",
-    time: "5m ago",
-    icon: "💻💬",
+    icon: "💻",
     color: "#FF3D71",
   },
   {
     name: "Semear",
     description: "Semeando oportunidades.",
-    time: "2m ago",
     icon: "🔄",
     color: "#1E86FF",
   },
   {
     name: "Cubii",
-    description: "Admnistrador de serviços de condomínio.",
-    time: "2m ago",
+    description: "Administrador de serviços de condomínio.",
     icon: "🧊",
     color: "#1E86FF",
   },
 ];
 
-notifications = Array.from({ length: 10 }, () => notifications).flat();
+// Duplicamos os elementos para preenchimento e simulação de rolagem
+notifications = Array.from({ length: 30 }, () => notifications).flat();
 
-const Notification = ({ name, description, icon, color, time }: Item) => {
+const Notification = ({ name, description, icon, color }: Item) => {
   return (
     <figure
       className={cn(
-        "relative mx-auto min-h-fit w-full max-w-[400px] transform cursor-pointer overflow-hidden rounded-2xl p-4",
-        // animation styles
-        "transition-all duration-200 ease-in-out hover:scale-[103%]",
-        // light styles
-        "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-        // dark styles
-        "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
+        "relative mx-auto w-full max-w-[95%] rounded-lg p-5",
+        "transition-all duration-300 ease-in-out hover:scale-[104%]",
+        "bg-white bg-transparent shadow-lg dark:bg-[#121212] dark:shadow-none dark:backdrop-blur-sm",
+        "border border-gray-600 dark:border-gray-700"
       )}
     >
-      <div className="flex flex-row items-center gap-3">
+      <div className="flex items-center gap-4">
         <div
-          className="flex h-10 w-10 items-center justify-center rounded-2xl"
+          className="flex h-12 w-12 items-center justify-center rounded-full"
           style={{
             backgroundColor: color,
           }}
         >
-          <span className="text-lg">{icon}</span>
+          <span className="text-2xl">{icon}</span>
         </div>
-        <div className="flex flex-col overflow-hidden">
-          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white ">
-            <span className="text-sm sm:text-lg">{name}</span>
-            <span className="mx-1">·</span>
-            <span className="text-xs text-gray-500">{time}</span>
+        <div className="overflow-hidden">
+          <figcaption className="text-lg font-semibold tracking-tight text-gray-800 dark:text-white">
+            {name}
           </figcaption>
-          <p className="text-sm font-normal dark:text-white/60">
+          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
             {description}
           </p>
         </div>
@@ -91,8 +82,11 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
 
 export function FeaturesCard() {
   return (
-    <div className="relative flex max-h-[435px] min-h-[435px] flex-col overflow-hidden rounded-2xl border bg-background p-6 shadow-lg dark:border-[#443c3c]">
-      <AnimatedList>
+    <div className="relative mt-4  max-h-[450px] min-h-[450px] overflow-hidden rounded-lg  p-6  ">
+      <div className="flex inset-0  overflow-hidden pointer-events-none">
+        {/* <Meteors number={20} /> */}
+      </div>
+      <AnimatedList className="bg-transparent">
         {notifications.map((item, idx) => (
           <Notification {...item} key={idx} />
         ))}

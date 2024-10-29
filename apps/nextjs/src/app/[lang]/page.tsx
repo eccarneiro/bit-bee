@@ -1,9 +1,6 @@
 import Link from "next/link";
-
 import * as Icons from "@saasfly/ui/icons";
-
-import { XBlogArticle } from "~/components/blog-card";
-import { Comments } from "~/components/comments";
+import { Tools } from "~/components/tools";
 import { FeaturesCard } from "~/components/features-card";
 import { Meteorss } from "~/components/meteors-card";
 import { Questions } from "~/components/questions";
@@ -77,12 +74,7 @@ export default async function IndexPage({
           <div className="hidden h-full w-full xl:block">
             <div className="flex flex-col pt-38">
               <Meteorss meteor={meteors_data} />
-              <div className="mt-4 flex w-full justify-between">
-                <XBlogArticle />
-                <div className="ml-4">
-                  <FeaturesCard />
-                </div>
-              </div>
+              <FeaturesCard />
             </div>
           </div>
         </div>
@@ -128,7 +120,7 @@ export default async function IndexPage({
           </div>
 
           <div className="w-full overflow-x-hidden">
-            <Comments />
+            <Tools />
           </div>
         </div>
       </section>
