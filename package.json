@@ -36,6 +36,9 @@
   ],
   "packageManager": "bun@v1.1.10",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.6.0"
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@types/react-slick": "^0.23.13",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
   }
 }

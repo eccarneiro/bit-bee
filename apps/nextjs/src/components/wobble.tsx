@@ -6,10 +6,9 @@ import { WobbleCard } from "@saasfly/ui/wobble-card";
 
 export function WobbleCardShow() {
   return (
-    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 lg:grid-cols-3">
+    <div className="grid grid-cols-3 gap-3 -mt-40 ">
       <WobbleCard
         containerClassName="col-span-1 lg:col-span-2 h-full bg-black min-h-[500px] lg:min-h-[300px]"
-
       >
         <div className="max-w-xs">
           <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-yellow-400 md:text-xl lg:text-3xl">
@@ -21,15 +20,15 @@ export function WobbleCardShow() {
           </p>
         </div>
       </WobbleCard>
-      <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-black">
-        <h2 className="max-w-80  text-balance text-left text-base font-semibold tracking-[-0.015em] text-yellow-400 md:text-xl lg:text-3xl">
+      <WobbleCard containerClassName="col-span-1 min-h-[300px] w-[260px] bg-black">
+        <h2 className="text-balance text-left text-base font-semibold tracking-[-0.015em] text-yellow-400 md:text-xl lg:text-3xl">
           Sua Visão, Nossa Missão
         </h2>
         <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-yellow-400">
           Na BitBee, acreditamos que cada ideia pode se tornar uma solução digital inovadora.
         </p>
       </WobbleCard>
-      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+      <WobbleCard containerClassName="col-span-1 w-[610px] lg:col-span-3 bg-black min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
         <div className="max-w-sm">
           <h2 className="max-w-sm text-balance  text-left text-base font-semibold tracking-[-0.015em] text-yellow-400 md:max-w-lg md:text-xl lg:text-3xl">
             Soluções Eficientes
@@ -46,6 +45,6 @@ export function WobbleCardShow() {
           className="absolute -bottom-10 -right-10 rounded-2xl object-contain md:-right-[60%] lg:-right-[20%]"
         />
       </WobbleCard>
-    </div>
+    </div >
   );
 }

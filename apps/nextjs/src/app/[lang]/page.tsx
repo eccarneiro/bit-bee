@@ -11,6 +11,7 @@ import { WordReveal } from "~/components/word-reveal";
 import type { Locale } from "~/config/i18n-config";
 import { getDictionary } from "~/lib/get-dictionary";
 import type { Meteor } from "~/types/meteors";
+import CardCarousel from "~/components/cardCarousel";
 
 const meteors_data: Meteor = {
   name: "Tem dúvidas ou quer um orçamento? Fale com a gente no WhatsApp! 🚀📲",
@@ -34,7 +35,7 @@ export default async function IndexPage({
       <section className="w-full px-8 sm:px-48 md:px-48 xl:h-[100vh] xl:px-48">
         <div className="grid grid-cols-1 gap-10 pb-10 md:pb-40 xl:grid-cols-2">
           <div className="flex flex-col items-start">
-            <div className="flex flex-col pt-4 md:pt-28 lg:pt-28 xl:pt-28">
+            <div className="flex flex-col pt-4">
               <div className="mt-6">
                 <h1 className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl">
                   {dict.marketing.title ||
@@ -68,25 +69,29 @@ export default async function IndexPage({
                   </div>
                 </Link>
               </div>
+              <Meteorss meteor={meteors_data} />
             </div>
           </div>
 
-          <div className="hidden h-full w-full xl:block">
-            <div className="flex flex-col pt-38">
-              <Meteorss meteor={meteors_data} />
+          <div className="hidden h-full w-full xl:flex flex-col">
+            <h1 className=" max-w-4xl text-left mt-12 text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl ml-5">
+              Nossos Produtos
+            </h1>
+            <div className="-mt-28">
               <FeaturesCard />
             </div>
+
           </div>
         </div>
       </section>
 
-      <section className="hidden h-[100vh] w-full xl:block">
-        <div className="flex h-full w-full justify-between px-[220px]">
-          <div className="flex w-[60%] flex-col pr-4 pt-40">
+      <section className="hidden h-[100vh] w-full xl:block -ml-36 mt-24">
+        <div className="flex h-full w-full justify-between px-[320px]">
+          <div className="flex w-[60%] flex-col pr-4 pt-0 justify-start">
             <WobbleCardShow />
           </div>
-          <div className="h-full w-[40%] pt-8">
-            <div className="flex flex-col pl-[120px]">
+          <div className="h-full w-[40%]">
+            <div className="flex flex-col pl-[320px] -mt-5">
               <WordReveal />
             </div>
           </div>
@@ -95,9 +100,9 @@ export default async function IndexPage({
 
       <section className="hidden h-[100vh] w-full xl:block">
         <div className="flex h-full w-full justify-between px-[220px]">
-          <div className="flex w-[60%] flex-col pr-4 pt-40">
-            <div className="px-[120px]">
-              <Questions />
+          <div className="flex w-[60%] flex-col pr-4 pt-64">
+            <div className="px-[120px] pt-5">
+              <CardCarousel />
             </div>
           </div>
         </div>

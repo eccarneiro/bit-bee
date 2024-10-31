@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"; // Importando useState e useEffect
 import { cn } from "@saasfly/ui";
 import { AnimatedList } from "@saasfly/ui/animated-list";
 import { Meteors } from "@saasfly/ui/meteors"; // Importando a animação de meteoros
+import { useRouter } from "next/navigation";
 
 interface Item {
   name: string;
@@ -11,6 +12,8 @@ interface Item {
   icon: string;
   color: string;
 }
+
+
 
 let notifications = [
   {
@@ -52,7 +55,7 @@ const Notification = ({ name, description, icon, color }: Item) => {
   return (
     <figure
       className={cn(
-        "relative mx-auto w-full max-w-[95%] rounded-lg p-5",
+        "relative mx-auto w-full max-w-[100%] rounded-lg p-5",
         "transition-all duration-300 ease-in-out hover:scale-[104%]",
         "bg-white bg-transparent shadow-lg dark:bg-[#121212] dark:shadow-none dark:backdrop-blur-sm",
         "border border-gray-600 dark:border-gray-700"
@@ -82,15 +85,13 @@ const Notification = ({ name, description, icon, color }: Item) => {
 
 export function FeaturesCard() {
   return (
-    <div className="relative mt-4  max-h-[450px] min-h-[450px] overflow-hidden rounded-lg  p-6  ">
-      <div className="flex inset-0  overflow-hidden pointer-events-none">
-        {/* <Meteors number={20} /> */}
-      </div>
+    <div className="relative  max-h-[450px] min-h-[450px] overflow-hidden rounded-lg  p-6 mt-[25%]">
+
       <AnimatedList className="bg-transparent">
         {notifications.map((item, idx) => (
           <Notification {...item} key={idx} />
         ))}
       </AnimatedList>
-    </div>
+    </div >
   );
 }
