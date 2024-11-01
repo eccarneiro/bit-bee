@@ -50,10 +50,10 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "saasfly",
+      name: "BitBee",
     },
   ],
-  creator: "Saasfly",
+  creator: "BitBee",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -95,7 +95,6 @@ export default function RootLayout({
           enableSystem={false}
         >
           <NextDevtoolsProvider>{children}</NextDevtoolsProvider>
-          <Analytics />
           <SpeedInsights />
           <Toaster />
           <TailwindIndicator />

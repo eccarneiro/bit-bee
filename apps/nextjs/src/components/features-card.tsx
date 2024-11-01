@@ -1,57 +1,57 @@
 "use client";
-
-import { useEffect, useState } from "react"; // Importando useState e useEffect
 import { cn } from "@saasfly/ui";
 import { AnimatedList } from "@saasfly/ui/animated-list";
-import { Meteors } from "@saasfly/ui/meteors"; // Importando a animação de meteoros
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface Item {
+  id: string;
   name: string;
   description: string;
   icon: string;
   color: string;
 }
 
-
-
 let notifications = [
   {
+    id: "beespot",
     name: "BeeSpot",
     description: "Wi-Fi como uma ferramenta de marketing.",
     icon: "🛜",
-    color: "#00C9A7",
+    color: "#FFB800",
   },
   {
+    id: "magazine",
     name: "Magazine",
     description: "A Modernização da Publicação Digital.",
     icon: "🧾",
     color: "#FFB800",
   },
   {
+    id: "e-agc",
     name: "E-AGC",
     description: "Assembleias virtuais.",
     icon: "💻",
-    color: "#FF3D71",
+    color: "#FFB800",
   },
   {
+    id: "semear",
     name: "Semear",
     description: "Semeando oportunidades.",
     icon: "🔄",
-    color: "#1E86FF",
+    color: "#FFB800",
   },
   {
+    id: "cubii",
     name: "Cubii",
     description: "Administrador de serviços de condomínio.",
     icon: "🧊",
-    color: "#1E86FF",
+    color: "#FFB800",
   },
 ];
 
-// Duplicamos os elementos para preenchimento e simulação de rolagem
 notifications = Array.from({ length: 30 }, () => notifications).flat();
 
-const Notification = ({ name, description, icon, color }: Item) => {
+const Notification = ({ id, name, description, icon, color }: Item) => {
   return (
     <figure
       className={cn(
@@ -70,13 +70,21 @@ const Notification = ({ name, description, icon, color }: Item) => {
         >
           <span className="text-2xl">{icon}</span>
         </div>
-        <div className="overflow-hidden">
-          <figcaption className="text-lg font-semibold tracking-tight text-gray-800 dark:text-white">
-            {name}
-          </figcaption>
-          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {description}
-          </p>
+        <div className="flex flex-1 items-center justify-between overflow-hidden">
+          <div>
+            <figcaption className="text-lg font-semibold tracking-tight text-gray-800 dark:text-white">
+              {name}
+            </figcaption>
+            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+              {description}
+            </p>
+          </div>
+          <Link
+            href={`/products/${id}`}
+            className="ml-4 rounded-lg dark:bg-transparent  text-white px-3 py-2 dark:hover:bg-gray-400"
+          >
+            +
+          </Link>
         </div>
       </div>
     </figure>
@@ -87,9 +95,9 @@ export function FeaturesCard() {
   return (
     <div className="relative  max-h-[450px] min-h-[450px] overflow-hidden rounded-lg  p-6 mt-[25%]">
 
-      <AnimatedList className="bg-transparent">
-        {notifications.map((item, idx) => (
-          <Notification {...item} key={idx} />
+      <AnimatedList className="bg-transparent shadow-inner">
+        {notifications.map((item, id) => (
+          <Notification {...item} key={id} />
         ))}
       </AnimatedList>
     </div >

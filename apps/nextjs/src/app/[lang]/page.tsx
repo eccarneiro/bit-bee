@@ -12,6 +12,7 @@ import type { Locale } from "~/config/i18n-config";
 import { getDictionary } from "~/lib/get-dictionary";
 import type { Meteor } from "~/types/meteors";
 import CardCarousel from "~/components/cardCarousel";
+import { FaWhatsapp } from "react-icons/fa";
 
 const meteors_data: Meteor = {
   name: "Tem dúvidas ou quer um orçamento? Fale com a gente no WhatsApp! 🚀📲",
@@ -33,18 +34,26 @@ export default async function IndexPage({
   return (
     <>
       <section className="w-full px-8 sm:px-48 md:px-48 xl:h-[100vh] xl:px-48">
+        <a
+          href="https://wa.me/seunumerodetelefone"
+          className="fixed bottom-8 right-8 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaWhatsapp className="w-8 h-8" />
+        </a>
         <div className="grid grid-cols-1 gap-10 pb-10 md:pb-40 xl:grid-cols-2">
           <div className="flex flex-col items-start">
-            <div className="flex flex-col pt-4">
+            <div className="flex flex-col pt-4 ">
               <div className="mt-6">
-                <h1 className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl">
+                <h1 className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-8xl">
                   {dict.marketing.title ||
                     "BitBee"}
                 </h1>
               </div>
 
               <div>
-                <span className="relative mb-6 max-w-3xl text-left text-3xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl">
+                <span className="relative mb-6 max-w-3xl text-left text-3xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-6xl">
                   {dict.marketing.sub_title ||
                     "A sua boutique de software."}
                 </span>
@@ -74,7 +83,7 @@ export default async function IndexPage({
           </div>
 
           <div className="hidden h-full w-full xl:flex flex-col">
-            <h1 className=" max-w-4xl text-left mt-12 text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl ml-5">
+            <h1 className=" max-w-4xl text-left mt-16 text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-6xl ml-5">
               Nossos Produtos
             </h1>
             <div className="-mt-28">
